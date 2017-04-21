@@ -1,0 +1,38 @@
+
+public class DoMath {
+	public static void main(String[] args){
+		System.out.println(Calculate.average(2.0,3.0));
+		
+		System.out.println(Calculate.discriminant(2,16,32));
+		
+		Calculate.toMixedNum(4, 3);
+		
+		System.out.println(Calculate.round2(5.284));
+		
+		System.out.println(Calculate.max(10, 2));
+		
+		System.out.println(Calculate.isPrime(17));
+		
+		System.out.println(Calculate.factorial(5));
+		
+		System.out.println(Calculate.exponent(3, 3));
+		
+		System.out.println(Calculate.foil(5,4,2,3,"a"));
+		
+		System.out.println(Calculate.discriminant(1,6,9));
+		
+		System.out.println(Calculate.sqrt(4));
+		
+		System.out.println(Calculate.exponent(2, 1));
+		
+		System.out.println(Calculate.toMixedNum(3, 3));
+		
+		System.out.println(Calculate.toRadians(30.0));
+		
+		System.out.println(Calculate.toDegrees(2*Math.PI));
+		
+		System.out.println(Calculate.gcf(100, 15));
+		
+		System.out.println(Calculate.isPrime(6));
+	}
+}

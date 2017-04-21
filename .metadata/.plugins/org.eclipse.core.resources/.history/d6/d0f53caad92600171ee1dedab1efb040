@@ -1,0 +1,19 @@
+package textExcel;
+
+public class EmptyCell implements Cell {
+	private String text;
+	
+	public EmptyCell(){
+		this.text = "";
+	}
+	
+	@Override
+	public String abbreviatedCellText() {
+		return "           ";
+	}
+
+	@Override
+	public String fullCellText() {
+		return "";
+	}
+}
