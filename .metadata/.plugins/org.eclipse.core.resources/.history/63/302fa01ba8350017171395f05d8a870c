@@ -28,20 +28,15 @@ public class Hangman {
 		return doesContain;
 	}
 	
-	public String fillLetters(String s, char letter){
-		char[] chars = s.toCharArray();
-		for(int i=0;i<s.length()-1;i++){
-			if(this.word.charAt(i) == letter){
-			    chars[i] = letter;
-			}
-		}
-		return String.valueOf(chars);
+	public String fillLetters(String s){
+		
+		return "";
 	}
 	 
 	
 	public static void main(String[] args){
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("Do you want to play Hangman?");
+		System.out.print("Do you want to play Hangman?");
 		String userInput = scanner.nextLine();
 		
 		while(userInput.equalsIgnoreCase("YES")){
@@ -53,16 +48,17 @@ public class Hangman {
 			for(int i=0; i<game.getWord().length();i++){
 				totalGuess += "_";
 			}
-			System.out.println(totalGuess);
 			
-			while(!totalGuess.equals(game.getWord())){
+			//while(!totalGuess.equals(game.getWord())){
+			while(!input.nextLine().equalsIgnoreCase("NO")){
+				System.out.println(totalGuess);
 				System.out.println("Guess a letter.");
 				guess = input.nextLine().charAt(0);
 				
 				if(game.containsLetter(guess)){
-					totalGuess = game.fillLetters(totalGuess, guess);
+					game.fillLetters(totalGuess);
 				}
-				System.out.println(totalGuess);
+				
 			}
 			
 			System.out.println("Do you want to play Hangman?");

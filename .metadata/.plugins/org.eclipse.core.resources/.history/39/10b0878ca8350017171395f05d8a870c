@@ -41,7 +41,7 @@ public class Hangman {
 	
 	public static void main(String[] args){
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("Do you want to play Hangman?");
+		System.out.print("Do you want to play Hangman?");
 		String userInput = scanner.nextLine();
 		
 		while(userInput.equalsIgnoreCase("YES")){
@@ -58,6 +58,7 @@ public class Hangman {
 			while(!totalGuess.equals(game.getWord())){
 				System.out.println("Guess a letter.");
 				guess = input.nextLine().charAt(0);
+				
 				
 				if(game.containsLetter(guess)){
 					totalGuess = game.fillLetters(totalGuess, guess);

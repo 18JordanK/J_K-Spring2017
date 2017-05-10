@@ -59,6 +59,7 @@ public class Hangman {
 				System.out.println("Guess a letter.");
 				guess = input.nextLine().charAt(0);
 				
+				
 				if(game.containsLetter(guess)){
 					totalGuess = game.fillLetters(totalGuess, guess);
 				}
