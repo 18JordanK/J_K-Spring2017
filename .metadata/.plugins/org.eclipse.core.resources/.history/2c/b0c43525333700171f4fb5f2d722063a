@@ -91,7 +91,6 @@ public class Hangman {
 					game.guessLetter(guess);
 				}else{
 					System.out.println("Invalid guess");
-					guess.input.nextLine
 				}
 				if(game.getUserWord().equals(game.getWord())){
 					System.out.println("You won!");

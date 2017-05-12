@@ -37,7 +37,6 @@ public class Hangman {
 		if(letter > 'Z'){
 			letter -= ' ';
 		}
-		
 		boolean contains = false;
 		for(int i=0; i<this.word.length(); i++){
 			if(this.word.charAt(i) == letter){
@@ -87,12 +86,8 @@ public class Hangman {
 			while(game.getNumIncorrect() > 0 && !game.getUserWord().equals(game.getWord())){
 				System.out.println("Guess a letter.");
 				guess = input.nextLine().charAt(0);
-				if((guess >= 'A' && guess<= 'Z') && (guess>= 'a' && guess <= 'z')){
-					game.guessLetter(guess);
-				}else{
-					System.out.println("Invalid guess");
-					guess.input.nextLine
-				}
+				
+				game.guessLetter(guess);
 				if(game.getUserWord().equals(game.getWord())){
 					System.out.println("You won!");
 				}
