@@ -62,8 +62,6 @@ public class Hangman {
 	}
 	
 	public String fillLetters(String s, char letter){
-		
-		
 		char[] chars = s.toCharArray();
 		for(int i=0;i<s.length();i++){
 			if(this.word.charAt(i) == letter){
@@ -78,23 +76,25 @@ public class Hangman {
 		System.out.println("Do you want to play Hangman?");
 		String userInput = scanner.nextLine();
 		
-		while(!userInput.contains("no")){
+		while(!userInput.toUpperCase().contains("NO")){
 			Hangman game = new Hangman();
 			System.out.println(game.getUserWord());
-			Scanner input = new Scanner(System.in);
+			Scanner userScanner = new Scanner(System.in);
+			String input = userScanner.nextLine();
 			char guess;
 			
 			while(game.getNumIncorrect() > 0 && !game.getUserWord().equals(game.getWord())){
 				System.out.println("Guess a letter.");
-				guess = input.nextLine().charAt(0);
-				if((guess >= 'A' && guess<= 'Z') && (guess>= 'a' && guess <= 'z')){
-					game.guessLetter(guess);
-				}else{
-					System.out.println("Invalid guess");
-					guess.input.nextLine
+				while(!validInput(input, game)){
+					System.out.println("Invalid guess \n Guess Again.");
+					input = userScanner.nextLine();
 				}
+				guess = input.charAt(0);
+				game.guessLetter(guess);
 				if(game.getUserWord().equals(game.getWord())){
 					System.out.println("You won!");
+				}else{
+					input = userScanner.nextLine();
 				}
 			}
 			
@@ -102,5 +102,19 @@ public class Hangman {
 			userInput = scanner.nextLine();
 		}
 		System.out.print("Session terminated.");
+	}
+
+	private static boolean validInput(String input, Hangman game) {
+		boolean valid = true;
+		if(input.length() > 2 || input.length() == 0){
+			return false;
+		}
+		
+		for(int i=0;i<game.getUsedWords().size();i++){
+			if(game.getUsedWords().get(i) == (input.charAt(0) + ' ')){
+				valid = false;
+			}
+		}
+		return valid;
 	}
 }
