@@ -12,10 +12,9 @@ public class hangman {
 		String playerName = "";
 		System.out.println("Hello there, What is your name?");
 		playerName = playerInput.nextLine();
-		System.out.println("Hello " + playerName + ". Consider captial letters"
-				+ "and pick ONE letter. Now"
+		System.out.println("Hello " + playerName + ". Consider captial letters "
+				+ "and pick ONE letter. Now "
 				+ "get ready to play hangman!");
-		System.out.println("                ");
 
 		//dictionary of words being used
 		String [] words = {"the","of","and","a","to","in","is","you",
@@ -37,7 +36,7 @@ public class hangman {
 		String[] toShow = new String[secretWord.length()];
 		System.out.println(randomInt + "1xEFO 084then342use33may39"+ secretWord+ "X2on...Loading");
 		System.out.println("");
-		int numGuesses = 10;
+		int numGuesses = 6;
 		System.out.println(playerName + ", you have " + numGuesses + 
 				" guesses, use them wisely." );
 		String guess = "";
@@ -86,4 +85,5 @@ public class hangman {
 		}
 
 	}
+
 }

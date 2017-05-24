@@ -72,10 +72,12 @@ public class Hangman {
 	}
 	
 	public static void main(String[] args){
+		//Asks user if they want to play.
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Do you want to play Hangman?");
 		String userInput = scanner.nextLine();
 		
+		//
 		while(!userInput.toUpperCase().contains("NO")){
 			Hangman game = new Hangman();
 			System.out.println(game.getUserWord());
