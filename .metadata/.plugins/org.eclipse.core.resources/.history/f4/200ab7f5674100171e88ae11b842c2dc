@@ -10,7 +10,7 @@ public class Hangman {
 			
 	public Hangman(){
 		Random rand = new Random();
-		int index = rand.nextInt()*words.length-1;
+		int index = rand.nextInt();
 		
 		this.word = words[index];
 		System.out.println("You have " + numIncorrect + " incorrect guesses left.");
