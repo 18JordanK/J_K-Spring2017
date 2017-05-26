@@ -4,7 +4,7 @@ public class Hangman {
 	String[] words = {"OPEN", "DOOR", "ABLE", "TINT", "FOND", "RANT", "TEST", "PART", "FALL",
 			"WORD", "STEM", "FLEM", "WALL", "RACE", "CARS", "FOUR", "YOUR", "EGGS", "PIES", "CAKE"};
 	private String word;
-	String userWord = "";
+	String userWord = "____";
 	private int numIncorrect = 6;
 	private ArrayList<Character> usedWords = new ArrayList<Character>();
 			
@@ -13,9 +13,6 @@ public class Hangman {
 		int index = 0 + (int)(Math.random() * ((words.length-1 - 0) + 1));
 		
 		this.word = words[index];
-		for(int i=0; i < this.word.length();i++){
-			userWord += "_";
-		}
 		System.out.println("You have " + numIncorrect + " incorrect guesses left.");
 		
 	}

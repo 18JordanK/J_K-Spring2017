@@ -6,7 +6,6 @@ import java.util.Random;
 public class hangman {
 
 	public static void main(String[] args) {
-		@SuppressWarnings("resource")
 		Scanner playerInput = new Scanner(System.in);
 
 		//intro message
